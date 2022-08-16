@@ -11,26 +11,15 @@
             raise ValueError('Неверный формат ввода!')
 
     @classmethod
-    def point_index_list(cls, value):
-        """ Создает список с номерами индексов точек в аргументе """
-        point_index_list = []
-        for i in range(0, len(value)):
-            if value[i] == '.':
-                point_index_list.append(i)
-        return point_index_list
-
-    @classmethod
     def define_args(cls, value):
-        """ Определяет переменные срезами строк относительно индексов точек в аргументе, записанных в список """
-        pil = cls.point_index_list(value)
-        x = int(value[0: pil[0]])
-        y = int(value[pil[0] + 1: pil[1]])
-        z = int(value[pil[1] + 1:])
+        """ Определяет аргументы x y z """
+        x = int(value.split('.')[0])
+        y = int(value.split('.')[1])
+        z = int(value.split('.')[2])
         return x, y, z
 
     def __init__(self, value):
         self.verify_str(value)
-        self.point_index_list(value)
 
         self.x, self.y, self.z = self.define_args(value)
 
