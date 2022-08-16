@@ -1,11 +1,11 @@
 class Counter:
-    step = None
-    stop = None
 
-    def __init__(self, start):
+    def __init__(self, start, step=None, stop=None):
         self.verify_int(start)
         self.__current_step = 0
         self.start = start
+        self.step = step
+        self.stop = stop
 
     @classmethod
     def verify_int(cls, value):
@@ -13,7 +13,7 @@ class Counter:
         if type(value) != int:
             raise TypeError('Значение должно быть целым числом!')
 
-    def verify_step(self):
+    def __verify_step(self):
         """ Сравнивает step и stop если stop is not None"""
         if self.stop and self.step > self.stop:
             raise LookupError('Превышено значение step')
