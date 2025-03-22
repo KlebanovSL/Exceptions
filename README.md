@@ -18,7 +18,7 @@ where:
 
 examples:
 
-`ws://<CURRENT_DNS>/ws/chats/<ID>/?token=<JWT_TOKEN>`
+`ws://<CURRENT_DNS>/ws/chats/<ID>/?token=<JWT_TOKEN>` 
 `ws://<CURRENT_DNS>/ws/chats/<ID>/?token=<JWT_TOKEN>`
 
 </details>
